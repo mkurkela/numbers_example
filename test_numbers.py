@@ -60,6 +60,10 @@ class TestNumbers(TestCase):
                         "The file does not contain 100 unique numbers")
 
     def test_read_numbers(self):
+        # Test given file is a directory
+        self.assertIsNone(Numbers.read_numbers(50, "."),
+                          "Given file is a directory case is not handled correctly")
+
         # Test empty file name
         self.assertIsNone(Numbers.read_numbers(50, ""),
                          "Empty file name is not handled correctly")
@@ -96,7 +100,6 @@ class TestNumbers(TestCase):
                          "List length should be 50")
         self.assertEqual(len(read_list), len(set(read_list)),
                         "Items were not unique")
-
 
     def test_is_integer(self):
         '''
