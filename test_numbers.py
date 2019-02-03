@@ -99,6 +99,10 @@ class TestNumbers(TestCase):
 
 
     def test_is_integer(self):
+        '''
+        Test is integer method
+        :return:
+        '''
         self.assertTrue(Numbers.check_integer(1))
         self.assertTrue(Numbers.check_integer(0))
         self.assertTrue(Numbers.check_integer(-1))
